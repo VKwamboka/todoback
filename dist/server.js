@@ -27,11 +27,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importStar(require("express"));
-const Routes_1 = __importDefault(require("./Routes"));
+const Routers_1 = __importDefault(require("./Routers"));
+// import authrouter from './Router/authRoutes'
+// import cors from 'cors'
 const app = (0, express_1.default)();
-// Middlewares
-app.use((0, express_1.json)()); // add the body to the Request
-app.use('/todos', Routes_1.default);
+//Register some Middlewares
+// app.use(cors())
+app.use((0, express_1.json)()); //adds a body to the Request
+app.use('/todos', Routers_1.default);
+// app.use('/auth',authrouter)
 app.listen(4000, () => {
-    console.log("App is Running ...");
+    console.log("Running ...");
 });
