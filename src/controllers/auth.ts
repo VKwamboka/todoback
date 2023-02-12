@@ -25,7 +25,7 @@ try {
     }
     const hashedPassword= await Bcrypt.hash(Password,10)
     ///check if email exist
-    await _db.exec('RegisterUser', {name:Name,email:Email, password:hashedPassword})
+    await _db.exec('RegisterUser', {id:uid(), name:Name,email:Email, password:hashedPassword})
     return res.status(201).json({message:'User registered'})
 
 } 
