@@ -6,7 +6,7 @@ interface Todo {
 }
 const todos:Todo[]=[]
  export const getTodos:RequestHandler=(req, res)=>{
-    return res.status(200).json(todos)
+    return res.status(200).json(todos) 
 }
 
 export const getOneTodo:RequestHandler<{id:string}> =(req, res)=>{
